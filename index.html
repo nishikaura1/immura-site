@@ -91,16 +91,16 @@
     font-size:14.5px; color:var(--accent); font-weight:500;
   }
   /* ---------- stats ---------- */
-  .statgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:0}
-  .stat{padding:0 34px; border-left:1px solid #ddd9ee}
+  .statgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:0}
+  .stat{padding:0 26px; border-left:1px solid #ddd9ee}
   .stat:first-child{padding-left:0; border-left:none}
   .num{
-    font-size:clamp(52px,6.6vw,78px); line-height:1; letter-spacing:-.045em;
+    font-size:clamp(46px,5.4vw,64px); line-height:1; letter-spacing:-.045em;
     font-weight:600; margin:0 0 16px;
     background:linear-gradient(135deg,#5b3bbd 0%,#3f5bd6 100%);
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  .what{margin:0 0 14px; font-size:16px; line-height:1.5; color:var(--text-lm)}
+  .what{margin:0 0 14px; font-size:15.5px; line-height:1.5; color:var(--text-lm)}
   .src a{
     font-size:13px; color:#6a5fa8; text-decoration:none;
     border-bottom:1px solid #cfc8e8; padding-bottom:1px;
@@ -231,6 +231,24 @@
         <p class="impact">The dependency nobody remembered gets caught.</p>
       </div>
       <div class="agent">
+        <p class="tag">Security</p>
+        <h3>Cyber intake</h3>
+        <p>Triages inbound security requests &mdash; exceptions, escalations, tooling reviews &mdash; assembling the context from every system before the queue reaches an analyst.</p>
+        <p class="impact">Requests arrive answered, not just logged.</p>
+      </div>
+      <div class="agent">
+        <p class="tag">AI governance</p>
+        <h3>Model and agent inventory</h3>
+        <p>Tracks which models, agents and data each team is actually using, against the policy that applies and the evidence a regulator or auditor will ask for.</p>
+        <p class="impact">The inventory is current, not a quarterly spreadsheet.</p>
+      </div>
+      <div class="agent">
+        <p class="tag">Third-party risk</p>
+        <h3>Vendor review</h3>
+        <p>Builds a vendor&rsquo;s picture from contracts, questionnaires, spend and what they are actually connected to &mdash; and flags where those four disagree.</p>
+        <p class="impact">Renewals stop being a fresh investigation.</p>
+      </div>
+      <div class="agent">
         <p class="tag">Workforce</p>
         <h3>Joiners and movers</h3>
         <p>Provisions the access a role genuinely needs, derived from what comparable people actually use rather than what a template says.</p>
@@ -264,12 +282,17 @@
         <p class="src"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure" target="_blank" rel="noopener">Gartner, May 2026</a></p>
       </div>
       <div class="stat">
+        <p class="num">95%</p>
+        <p class="what">of surveyed organisations reported no measurable P&amp;L return from their generative AI pilots.</p>
+        <p class="src"><a href="https://www.artificialintelligence-news.com/wp-content/uploads/2025/08/ai_report_2025.pdf" target="_blank" rel="noopener">MIT NANDA, 2025 &mdash; 153 leaders surveyed</a></p>
+      </div>
+      <div class="stat">
         <p class="num">60%</p>
         <p class="what">of AI projects unsupported by AI-ready data will be abandoned, through 2026.</p>
         <p class="src"><a href="https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk" target="_blank" rel="noopener">Gartner, February 2025</a></p>
       </div>
     </div>
-    <p class="statnote">Figures as published by their sources, each linked. Two are forecasts, one is a benchmark result.</p>
+    <p class="statnote">Figures as published by their sources, each linked. Two are forecasts, one a benchmark result, one a survey.</p>
   </div>
 </section>
 <section class="tint">
@@ -289,11 +312,18 @@
         <p class="lbl">What your team builds</p>
         <div class="chips">
           <span class="chip">Access recertification</span>
+          <span class="chip">Cyber intake</span>
+          <span class="chip">Model and agent inventory</span>
+          <span class="chip">Vendor review</span>
           <span class="chip">Customer resolution</span>
           <span class="chip">Exception handling</span>
           <span class="chip">Close reconciliation</span>
           <span class="chip">Impact review</span>
           <span class="chip">Joiners and movers</span>
+          <span class="chip">Control testing</span>
+          <span class="chip">Audit evidence</span>
+          <span class="chip">Incident reconstruction</span>
+          <span class="chip">Regulatory change tracking</span>
           <span class="chip">Your own agents</span>
         </div>
       </div>
@@ -322,8 +352,14 @@
           <span class="chip">Customer systems</span>
           <span class="chip">Finance &amp; ERP</span>
           <span class="chip">Support &amp; tickets</span>
-          <span class="chip">Data platforms</span>
           <span class="chip">Identity &amp; access</span>
+          <span class="chip">Security tooling</span>
+          <span class="chip">GRC &amp; policy</span>
+          <span class="chip">HR &amp; workforce</span>
+          <span class="chip">Procurement &amp; contracts</span>
+          <span class="chip">Engineering &amp; change</span>
+          <span class="chip">Data platforms</span>
+          <span class="chip">Collaboration &amp; mail</span>
           <span class="chip">Process &amp; docs</span>
         </div>
       </div>
