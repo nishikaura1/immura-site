@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immura</title>
+<meta name="description" content="Enterprise infrastructure for long-horizon agents. Immura builds a governed, agent-readable translation layer over the systems you already run.">
+<meta property="og:title" content="Immura">
+<meta property="og:description" content="Enterprise infrastructure for long-horizon agents.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d1f1c'/><path d='M9 22V10h3l4 7 4-7h3v12h-3v-7l-4 7-4-7v7z' fill='%235fb49c'/></svg>">
+<style>
+  :root{
+    --bg:#0b1513; --bg-2:#101f1c; --line:#1e322e;
+    --ink:#e8f0ee; --ink-2:#a9bdb8; --ink-3:#7d918d;
+    --accent:#5fb49c; --accent-dim:#2f6b5c; --slate:#8fa6b8;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--sans); font-size:17px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:0 16px}
+  header{padding:72px 0 0}
+  .mark{
+    font-family:var(--mono); font-size:13px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 56px;
+  }
+  h1{
+    font-size:clamp(28px,5.2vw,42px); line-height:1.18; letter-spacing:-.02em;
+    font-weight:600; margin:0 0 24px; max-width:19em;
+  }
+  .lede{font-size:clamp(17px,2.2vw,19px); color:var(--ink-2); margin:0 0 20px; max-width:38em}
+  h2{
+    font-family:var(--mono); font-size:12px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--ink-3); font-weight:500;
+    margin:0 0 20px; padding-top:4px;
+  }
+  section{padding:56px 0; border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  p{margin:0 0 18px; max-width:38em}
+  p:last-child{margin-bottom:0}
+  strong{color:var(--ink); font-weight:600}
+  .split{display:grid; gap:28px; grid-template-columns:1fr 1fr}
+  .card{background:var(--bg-2); border:1px solid var(--line); border-radius:10px; padding:22px}
+  .card h3{
+    margin:0 0 8px; font-size:16px; font-weight:600; color:var(--accent);
+    letter-spacing:-.01em;
+  }
+  .card p{font-size:15.5px; color:var(--ink-2); margin:0}
+  .flow{
+    display:flex; flex-wrap:wrap; gap:10px; align-items:stretch;
+    font-family:var(--mono); font-size:12.5px; margin:0 0 22px;
+  }
+  .step{
+    flex:1 1 120px; min-width:0; background:var(--bg-2);
+    border:1px solid var(--line); border-left:2px solid var(--accent-dim);
+    border-radius:7px; padding:12px 13px;
+  }
+  .step b{display:block; color:var(--accent); letter-spacing:.1em; font-weight:600}
+  .step span{color:var(--ink-3); font-size:11.5px; line-height:1.45; display:block; margin-top:5px}
+  ol.buckets{margin:0; padding:0; list-style:none; counter-reset:b}
+  ol.buckets li{
+    counter-increment:b; position:relative; padding:0 0 14px 34px;
+    color:var(--ink-2); font-size:15.5px; max-width:38em;
+  }
+  ol.buckets li::before{
+    content:counter(b); position:absolute; left:0; top:1px;
+    font-family:var(--mono); font-size:11px; color:var(--accent);
+    border:1px solid var(--accent-dim); border-radius:4px;
+    width:20px; height:20px; display:grid; place-items:center;
+  }
+  ol.buckets li:last-child{padding-bottom:0}
+  .pull{
+    border-left:2px solid var(--accent); background:var(--bg-2);
+    padding:20px 22px; border-radius:0 8px 8px 0; margin:0 0 22px;
+  }
+  .pull p{margin:0; color:var(--ink)}
+  code{
+    font-family:var(--mono); font-size:.9em; color:var(--slate);
+    background:#0d1a18; border:1px solid var(--line);
+    border-radius:4px; padding:1px 5px;
+  }
+  footer{
+    border-top:1px solid var(--line); padding:40px 0 72px;
+    color:var(--ink-3); font-size:14.5px;
+  }
+  footer a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-dim)}
+  footer a:hover{border-bottom-color:var(--accent)}
+  .note{font-family:var(--mono); font-size:12px; color:var(--ink-3); margin-top:14px}
+  @media (max-width:620px){
+    header{padding-top:48px}
+    .mark{margin-bottom:40px}
+    section{padding:44px 0}
+    .split{grid-template-columns:1fr; gap:16px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="mark">Immura</p>
+    <h1>Enterprise infrastructure for long-horizon agents.</h1>
+    <p class="lede">
+      Enterprises run on systems that were never designed to talk to each other — an
+      AS/400 ERP, a scheduling spreadsheet nobody owns, an unsupported Access database,
+      a shipping package bolted on a decade ago. An agent built straight onto that
+      estate either guesses or stalls.
+    </p>
+    <p class="lede">
+      Immura explores the systems you actually run, and the way they are actually used,
+      then builds a governed translation layer your agents can read.
+    </p>
+  </header>
+
+  <section>
+    <h2>Two things, kept separate</h2>
+    <div class="split">
+      <div class="card">
+        <h3>The layer</h3>
+        <p>The service we run: exploration of your estate, and the knowledge layer itself — versioned, reviewable, and yours to inspect.</p>
+      </div>
+      <div class="card">
+        <h3>The platform</h3>
+        <p>What your team builds agents with, on top of the layer, without touching the underlying systems directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <div class="flow">
+      <div class="step"><b>CONNECT</b><span>Reach each system as it is — API, database, flat file, green screen, or SaaS metadata.</span></div>
+      <div class="step"><b>DISCOVER</b><span>Who uses it, how, and how often — from logs and access records, not a process document.</span></div>
+      <div class="step"><b>INFER</b><span>Turn raw signals into typed, confidence-scored entities, each carrying its evidence.</span></div>
+      <div class="step"><b>SERVE</b><span>Compile the layer into what an agent reads: tools, traversals, and procedural guidance.</span></div>
+    </div>
+    <p>
+      Nothing reaches the layer because a model proposed it. Claims above a confidence
+      threshold merge; everything else queues for a named human, and risk classification
+      is never inferred at all.
+    </p>
+  </section>
+
+  <section>
+    <h2>What a schema cannot tell you</h2>
+    <p>
+      Many systems can already describe themselves. The value is in the six things that
+      no <code>describe()</code> call structurally can, because they are judgment,
+      synthesis, or policy rather than schema:
+    </p>
+    <ol class="buckets">
+      <li><strong>Behavioural rules</strong> — preconditions, side effects, and which of several valid paths is the one to use here.</li>
+      <li><strong>Semantic meaning</strong> — live versus dead values, fields required in practice but not in schema, your own terminology.</li>
+      <li><strong>Risk and governance</strong> — read-only, reversible, destructive, or external-facing; and who <em>should</em> act, not just who can.</li>
+      <li><strong>Grounding examples</strong> — real calls with real parameter values, redacted, rather than a type signature.</li>
+      <li><strong>Reliability context</strong> — how fresh the data actually is, and the ways it is known to fail.</li>
+      <li><strong>Cross-system identity</strong> — the crosswalk.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>The one no vendor can give you</h2>
+    <div class="pull">
+      <p>
+        That Salesforce <code>Account.Id</code> is the same customer as that ERP's
+        <code>customer_number</code>.
+      </p>
+    </div>
+    <p>
+      No single platform's API can ever establish this, because it has no knowledge of
+      anything outside itself. It is the piece that gets stronger with every additional
+      system in the estate — which is to say, strongest exactly where the problem is
+      worst.
+    </p>
+  </section>
+
+  <section>
+    <h2>Built to say "I don't know"</h2>
+    <p>
+      A wrong answer from an infrastructure layer is undetectable downstream — it
+      becomes an agent asserting a confident figure to a human with nothing to check it
+      against. So every boundary in the pipeline can decline, and prefers declining to
+      a plausible answer.
+    </p>
+    <p>
+      A field is decoded correctly or refused, never coerced. An ambiguous identity
+      reports its candidates rather than picking one. A question the layer does not
+      cover is answered with that fact. Each claim carries its sources and its
+      confidence, and the cost of refusing is measured and reported alongside the
+      accuracy, because a layer that refuses everything is worthless.
+    </p>
+  </section>
+
+  <footer>
+    <p>
+      Immura runs as an isolated deployment per client. Your layer, your repository,
+      your infrastructure.
+    </p>
+    <p class="note">&copy; 2026 Immura</p>
+  </footer>
+
+</div>
+</body>
+</html>
