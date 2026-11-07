@@ -28,8 +28,6 @@
     -webkit-font-smoothing:antialiased; letter-spacing:-.005em;
   }
   .wrap{max-width:1180px; margin:0 auto; padding:0 24px}
-  .narrow{max-width:860px; margin:0 auto; padding:0 24px}
-
   /* ---------- hero ---------- */
   .hero{
     position:relative; overflow:hidden; background:var(--ink);
@@ -61,7 +59,6 @@
   }
   .cta:hover{background:#fff}
   .cta span.arw{font-size:18px; line-height:1}
-
   /* ---------- sections ---------- */
   section{padding:104px 0}
   .dark{background:var(--ink-2); color:var(--text-d)}
@@ -80,7 +77,6 @@
   }
   .head p{margin:0; color:var(--text-lm); font-size:17px; max-width:34em}
   .dark .head p{color:var(--text-dm)}
-
   /* ---------- agent cards ---------- */
   .agents{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-d); border:1px solid var(--line-d)}
   .agent{background:var(--ink-2); padding:30px 28px 32px}
@@ -94,42 +90,52 @@
     margin:16px 0 0; padding-top:14px; border-top:1px solid var(--line-d);
     font-size:14.5px; color:var(--accent); font-weight:500;
   }
-
-  /* ---------- harness diagram ---------- */
-  .diagram{background:var(--panel); padding:48px 36px 0; margin-top:8px}
-  .sources{display:grid; grid-template-columns:repeat(6,1fr); gap:16px}
-  .src{background:#fff; padding:20px 18px; min-height:150px}
-  .src h4{margin:0 0 8px; font-size:15.5px; font-weight:600; letter-spacing:-.012em; color:var(--text-l)}
-  .src p{margin:0; font-size:14px; line-height:1.45; color:var(--text-lm)}
-  .trunk{height:58px; position:relative}
-  .trunk::before{
-    content:""; position:absolute; top:0; left:8.33%; right:8.33%; height:28px;
-    border:1px solid #aaa3cc; border-top:none; border-bottom:none;
+  /* ---------- stats ---------- */
+  .statgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:0}
+  .stat{padding:0 34px; border-left:1px solid #ddd9ee}
+  .stat:first-child{padding-left:0; border-left:none}
+  .num{
+    font-size:clamp(52px,6.6vw,78px); line-height:1; letter-spacing:-.045em;
+    font-weight:600; margin:0 0 16px;
+    background:linear-gradient(135deg,#5b3bbd 0%,#3f5bd6 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  .trunk::after{
-    content:""; position:absolute; top:28px; left:8.33%; right:8.33%;
-    border-top:1px solid #aaa3cc;
+  .what{margin:0 0 14px; font-size:16px; line-height:1.5; color:var(--text-lm)}
+  .src a{
+    font-size:13px; color:#6a5fa8; text-decoration:none;
+    border-bottom:1px solid #cfc8e8; padding-bottom:1px;
   }
-  .trunk i{position:absolute; top:28px; left:50%; width:1px; height:30px; background:#aaa3cc}
-  .core{background:linear-gradient(180deg,#f2f0fc 0%,#e7e3f6 100%); padding:40px 36px 46px}
-  .coremark{
-    text-align:center; font-size:30px; font-weight:600; letter-spacing:-.02em;
-    color:#b9b2da; margin:0 0 40px;
+  .src a:hover{border-bottom-color:#6a5fa8}
+  .src{margin:0}
+  .statnote{margin:42px 0 0; font-size:13.5px; color:#8a84ab}
+  /* ---------- layer stack ---------- */
+  .stack{margin-top:16px}
+  .band{border:1px solid #d9d4ee; background:#fff; padding:22px 26px}
+  .band .lbl{
+    font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    font-weight:600; color:#8a84ab; margin:0 0 16px;
   }
-  .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:34px}
-  .pillar h4{margin:0 0 9px; font-size:17.5px; font-weight:600; letter-spacing:-.015em; color:var(--text-l)}
-  .pillar p{margin:0; font-size:15px; line-height:1.55; color:var(--text-lm)}
-  .pillar .ico{
-    width:22px; height:22px; margin-bottom:14px; display:block;
-    border:1.5px solid var(--text-l); border-radius:3px; position:relative;
+  .chips{display:flex; flex-wrap:wrap; gap:9px}
+  .chip{
+    font-size:14px; padding:7px 14px; border:1px solid #ddd9ee;
+    background:var(--paper-2); color:var(--text-lm); border-radius:40px;
   }
-  .pillar .ico::after{content:""; position:absolute; inset:4px; border:1.5px solid var(--text-l); border-radius:1px}
-
-  /* ---------- principle ---------- */
-  .principle p{font-size:18px; line-height:1.62; color:var(--text-lm); margin:0 0 20px; max-width:36em}
-  .principle p:last-child{margin-bottom:0}
-  .principle strong{color:var(--text-l); font-weight:600}
-
+  .seam{
+    display:flex; align-items:center; gap:14px; padding:14px 26px;
+    font-size:13.5px; color:#7d76a3;
+  }
+  .seam::before,.seam::after{content:""; flex:1; height:1px; background:#ded9f0}
+  .seam span{white-space:nowrap}
+  .layerband{
+    background:linear-gradient(135deg,#1c1442 0%,#232a6b 100%);
+    color:#fff; padding:34px 36px 38px; border:1px solid #1c1442;
+  }
+  .layerband .lbl{color:#9b93d8}
+  .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:4px}
+  .pillar{padding:0 28px; border-left:1px solid #3b3473}
+  .pillar:first-child{padding-left:0; border-left:none}
+  .pillar h4{margin:0 0 9px; font-size:18px; font-weight:600; letter-spacing:-.015em; color:#fff}
+  .pillar p{margin:0; font-size:15px; line-height:1.55; color:#b2abd9}
   /* ---------- footer ---------- */
   footer{background:var(--ink); color:var(--text-d); padding:96px 0 56px; text-align:center}
   footer h2{margin:0 auto 28px; max-width:16em; font-size:clamp(26px,3.6vw,40px)}
@@ -138,32 +144,34 @@
     font-size:13.5px; color:var(--text-dm); display:flex;
     justify-content:space-between; gap:16px; flex-wrap:wrap; text-align:left;
   }
-
   @media (max-width:980px){
-    .sources{grid-template-columns:repeat(3,1fr)}
     .agents{grid-template-columns:repeat(2,1fr)}
-    .pillars{grid-template-columns:1fr; gap:26px}
     .head{grid-template-columns:1fr; gap:20px}
     h1{margin-bottom:96px}
+    .pillars{grid-template-columns:1fr; gap:26px}
+    .pillar{padding:0; border-left:none; padding-top:22px; border-top:1px solid #3b3473}
+    .pillar:first-child{padding-top:0; border-top:none}
+    .statgrid{grid-template-columns:1fr}
+    .stat{padding:28px 0 0; border-left:none; border-top:1px solid #ddd9ee}
+    .stat:first-child{padding-top:0; border-top:none}
+    .num{margin-bottom:10px}
   }
   @media (max-width:640px){
     body{font-size:16px}
-    .wrap,.narrow{padding:0 16px}
+    .wrap{padding:0 16px}
     .hero{padding:118px 0 72px}
     h1{margin-bottom:60px; letter-spacing:-.028em}
     section{padding:68px 0}
-    .sources{grid-template-columns:1fr 1fr}
     .agents{grid-template-columns:1fr}
-    .diagram{padding:28px 18px 0}
-    .core{padding:30px 20px 34px}
-    .trunk{display:none}
+    .band{padding:18px}
+    .layerband{padding:26px 20px 28px}
+    .seam{padding:12px 0; font-size:12.5px}
     .cta{min-width:0; width:100%; max-width:320px}
     footer .fine{justify-content:center; text-align:center}
   }
 </style>
 </head>
 <body>
-
 <div class="hero">
   <svg class="geo" viewBox="0 0 1500 420" fill="none" aria-hidden="true">
     <path d="M0 -60 L750 300 L1500 -60" stroke="#4d3da6" stroke-width="1.2"/>
@@ -178,7 +186,6 @@
     <a class="cta" href="#contact">Work with us <span class="arw">&rarr;</span></a>
   </div>
 </div>
-
 <section class="dark">
   <div class="wrap">
     <div class="head">
@@ -192,7 +199,6 @@
         differ by industry; the shape of the problem does not.
       </p>
     </div>
-
     <div class="agents">
       <div class="agent">
         <p class="tag">Risk &amp; compliance</p>
@@ -233,7 +239,39 @@
     </div>
   </div>
 </section>
-
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Why they stall</p>
+        <h2>The model is rarely the reason</h2>
+      </div>
+      <p>
+        Long-horizon agents fail on what surrounds the model: systems that disagree with
+        each other, actions nobody classified before an agent could take them, and claims
+        nobody can trace back. Those are infrastructure problems.
+      </p>
+    </div>
+    <div class="statgrid">
+      <div class="stat">
+        <p class="num">30%</p>
+        <p class="what">of realistic, multi-step workplace tasks were completed autonomously by the strongest agent tested.</p>
+        <p class="src"><a href="https://arxiv.org/abs/2412.14161" target="_blank" rel="noopener">TheAgentCompany, Carnegie Mellon</a></p>
+      </div>
+      <div class="stat">
+        <p class="num">40%</p>
+        <p class="what">of enterprises are expected to demote or decommission autonomous agents by 2027 — over governance gaps found only after a production incident.</p>
+        <p class="src"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure" target="_blank" rel="noopener">Gartner, May 2026</a></p>
+      </div>
+      <div class="stat">
+        <p class="num">60%</p>
+        <p class="what">of AI projects unsupported by AI-ready data will be abandoned, through 2026.</p>
+        <p class="src"><a href="https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk" target="_blank" rel="noopener">Gartner, February 2025</a></p>
+      </div>
+    </div>
+    <p class="statnote">Figures as published by their sources, each linked. Two are forecasts, one is a benchmark result.</p>
+  </div>
+</section>
 <section class="tint">
   <div class="wrap">
     <div class="head">
@@ -241,70 +279,57 @@
         <h2>Powered by the Immura layer</h2>
       </div>
       <p>
-        Built from an exploration of your own systems and how they are actually used, the
-        layer gives agents cross-system identity, governed actions, and evidence behind
-        every claim they make.
+        Your agents do not reach your systems directly. They reach a layer built from an
+        exploration of those systems and how they are actually used — which is what makes
+        an action governable and an answer traceable.
       </p>
     </div>
-
-    <div class="diagram">
-      <div class="sources">
-        <div class="src"><h4>Customer systems</h4><p>Accounts, pipeline and the history behind them</p></div>
-        <div class="src"><h4>Finance &amp; ERP</h4><p>Orders, billing, ledgers and reconciliation</p></div>
-        <div class="src"><h4>Support &amp; tickets</h4><p>Cases, incidents and what was promised</p></div>
-        <div class="src"><h4>Data platforms</h4><p>Warehouses, databases and scheduled extracts</p></div>
-        <div class="src"><h4>Identity &amp; access</h4><p>Directories, entitlements and activity logs</p></div>
-        <div class="src"><h4>Process &amp; docs</h4><p>Policies, playbooks and team definitions</p></div>
+    <div class="stack">
+      <div class="band">
+        <p class="lbl">What your team builds</p>
+        <div class="chips">
+          <span class="chip">Access recertification</span>
+          <span class="chip">Customer resolution</span>
+          <span class="chip">Exception handling</span>
+          <span class="chip">Close reconciliation</span>
+          <span class="chip">Impact review</span>
+          <span class="chip">Joiners and movers</span>
+          <span class="chip">Your own agents</span>
+        </div>
       </div>
-      <div class="trunk"><i></i></div>
-      <div class="core">
-        <p class="coremark">Immura</p>
+      <div class="seam"><span>Agents call governed capabilities, never the systems</span></div>
+      <div class="layerband">
+        <p class="lbl">The Immura layer</p>
         <div class="pillars">
           <div class="pillar">
-            <span class="ico"></span>
             <h4>Cross-system identity</h4>
             <p>Resolves the same customer, order or person across systems that share no key — the one thing no single platform's API can establish, because it cannot see outside itself.</p>
           </div>
           <div class="pillar">
-            <span class="ico"></span>
             <h4>Governed actions</h4>
             <p>Every action an agent can take is risk-classified by a named person first, and anything destructive is held at the server until it is confirmed.</p>
           </div>
           <div class="pillar">
-            <span class="ico"></span>
             <h4>Evidence on every claim</h4>
             <p>Sources and confidence travel with the answer, versioned in your own repository, so a reviewer can see what the layer believes and why.</p>
           </div>
         </div>
       </div>
+      <div class="seam"><span>Explored and reviewed, never assumed</span></div>
+      <div class="band">
+        <p class="lbl">What you already run</p>
+        <div class="chips">
+          <span class="chip">Customer systems</span>
+          <span class="chip">Finance &amp; ERP</span>
+          <span class="chip">Support &amp; tickets</span>
+          <span class="chip">Data platforms</span>
+          <span class="chip">Identity &amp; access</span>
+          <span class="chip">Process &amp; docs</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<section class="principle">
-  <div class="narrow">
-    <p class="eyebrow">The hard part</p>
-    <h2 style="margin-bottom:30px">Built to say &ldquo;I don&rsquo;t know&rdquo;</h2>
-    <p>
-      A wrong answer from an infrastructure layer is undetectable downstream. It becomes
-      an agent asserting a confident figure to a person who has nothing to check it
-      against — and the longer the work runs, the further that travels before anyone
-      notices.
-    </p>
-    <p>
-      So <strong>every boundary in the pipeline can decline, and prefers declining to a
-      plausible answer.</strong> A value is read correctly or refused, never coerced. An
-      ambiguous identity reports its candidates rather than picking one. A question the
-      layer does not cover is answered with that fact.
-    </p>
-    <p>
-      The cost of refusing is measured and reported next to the accuracy, because a layer
-      that refuses everything would be worthless — and one that never refuses is
-      guessing.
-    </p>
-  </div>
-</section>
-
 <footer id="contact">
   <div class="wrap">
     <h2>Find out what your estate can support</h2>
@@ -319,6 +344,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
