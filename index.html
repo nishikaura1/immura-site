@@ -11,13 +11,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230a1a22'/><path d='M9 22V10h3l4 7 4-7h3v12h-3v-7l-4 7-4-7v7z' fill='%234fc3a1'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23130e2a'/><path d='M9 22V10h3l4 7 4-7h3v12h-3v-7l-4 7-4-7v7z' fill='%238491ff'/></svg>">
 <style>
   :root{
-    --ink:#0a1a22; --ink-2:#102a35; --line-d:#1d3a46;
-    --paper:#ffffff; --paper-2:#f4f7f8; --panel:#c3d4dc;
-    --text-d:#ffffff; --text-dm:#9fb4bd; --text-l:#0f2a35; --text-lm:#4c6773;
-    --accent:#4fc3a1;
+    --ink:#130e2a; --ink-2:#1a1339; --line-d:#2d2459;
+    --paper:#ffffff; --paper-2:#f6f5fc; --panel:#cdc8e6;
+    --text-d:#ffffff; --text-dm:#a8a3c8; --text-l:#1a1340; --text-lm:#565080;
+    --accent:#8491ff;
     --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box}
@@ -34,8 +34,8 @@
   .hero{
     position:relative; overflow:hidden; background:var(--ink);
     background-image:
-      radial-gradient(120% 90% at 18% -10%, #17424f 0%, rgba(23,66,79,0) 55%),
-      radial-gradient(90% 70% at 85% 0%, #10303c 0%, rgba(16,48,60,0) 60%);
+      radial-gradient(120% 90% at 18% -10%, #3b2473 0%, rgba(59,36,115,0) 55%),
+      radial-gradient(90% 70% at 85% 0%, #1d2b7c 0%, rgba(29,43,124,0) 60%);
     color:var(--text-d); text-align:center;
     padding:148px 0 92px;
   }
@@ -55,7 +55,7 @@
   }
   .cta{
     display:inline-flex; align-items:center; gap:46px; justify-content:space-between;
-    background:#eef2f3; color:var(--ink); text-decoration:none;
+    background:#efeef9; color:var(--ink); text-decoration:none;
     font-weight:600; font-size:16.5px; padding:16px 20px;
     min-width:300px; transition:background .15s ease;
   }
@@ -104,17 +104,17 @@
   .trunk{height:58px; position:relative}
   .trunk::before{
     content:""; position:absolute; top:0; left:8.33%; right:8.33%; height:28px;
-    border:1px solid #9db2bd; border-top:none; border-bottom:none;
+    border:1px solid #aaa3cc; border-top:none; border-bottom:none;
   }
   .trunk::after{
     content:""; position:absolute; top:28px; left:8.33%; right:8.33%;
-    border-top:1px solid #9db2bd;
+    border-top:1px solid #aaa3cc;
   }
-  .trunk i{position:absolute; top:28px; left:50%; width:1px; height:30px; background:#9db2bd}
-  .core{background:linear-gradient(180deg,#eef2f4 0%,#e3eaee 100%); padding:40px 36px 46px}
+  .trunk i{position:absolute; top:28px; left:50%; width:1px; height:30px; background:#aaa3cc}
+  .core{background:linear-gradient(180deg,#f2f0fc 0%,#e7e3f6 100%); padding:40px 36px 46px}
   .coremark{
     text-align:center; font-size:30px; font-weight:600; letter-spacing:-.02em;
-    color:#aebfc8; margin:0 0 40px;
+    color:#b9b2da; margin:0 0 40px;
   }
   .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:34px}
   .pillar h4{margin:0 0 9px; font-size:17.5px; font-weight:600; letter-spacing:-.015em; color:var(--text-l)}
@@ -166,10 +166,10 @@
 
 <div class="hero">
   <svg class="geo" viewBox="0 0 1500 420" fill="none" aria-hidden="true">
-    <path d="M0 -60 L750 300 L1500 -60" stroke="#2c5f70" stroke-width="1.2"/>
-    <path d="M190 -60 L750 212 L1310 -60" stroke="#28596a" stroke-width="1.2"/>
-    <path d="M400 -60 L750 128 L1100 -60" stroke="#245263" stroke-width="1.2"/>
-    <path d="M0 -60 L750 300 L1500 -60 L1500 -160 L0 -160 Z" fill="#0d222c" fill-opacity=".55"/>
+    <path d="M0 -60 L750 300 L1500 -60" stroke="#4d3da6" stroke-width="1.2"/>
+    <path d="M190 -60 L750 212 L1310 -60" stroke="#43349a" stroke-width="1.2"/>
+    <path d="M400 -60 L750 128 L1100 -60" stroke="#3a2e8a" stroke-width="1.2"/>
+    <path d="M0 -60 L750 300 L1500 -60 L1500 -160 L0 -160 Z" fill="#181038" fill-opacity=".55"/>
   </svg>
   <p class="mark">Immura</p>
   <div class="wrap">
@@ -188,8 +188,8 @@
       </div>
       <p>
         A single call is easy. The work that matters runs for weeks, crosses systems that
-        disagree with each other, and has to be defensible afterwards. These are the
-        agents the layer makes possible.
+        disagree with each other, and has to be defensible afterwards. The systems
+        differ by industry; the shape of the problem does not.
       </p>
     </div>
 
